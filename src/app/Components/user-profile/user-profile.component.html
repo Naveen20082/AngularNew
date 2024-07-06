@@ -1,0 +1,13 @@
+<!-- ///////////////Input -->
+<!-- <input type="text" (input)="onChange($event)" [value]="name" /> -->
+<input type="text" [(ngModel)]="name" />
+<button [disabled]="isDisabled" (click)="onCLick()">Hii</button>
+<h1>{{name}}</h1>
+
+<!-- Using Array in HTML -->
+
+<div>
+    @for(user of ll; track user){
+    <h1>{{user}}</h1>
+    }
+</div>

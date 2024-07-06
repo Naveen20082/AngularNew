@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    list-style: none;
+    gap: 12px;
+
+    align-items: center;
+    justify-content: center;
+
+}
+
+.header>li {
+    /* background: black; */
+    border-radius: 5px;
+    padding: 4px;
+}
+
+.header>li:hover {
+    color: white;
+    cursor: pointer;
+    background: black;
+    border-radius: 5px;
+}
