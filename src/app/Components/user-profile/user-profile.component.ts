@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -10,19 +10,26 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class UserProfileComponent {
-  name = "naveen";
-  age = 24;
-  isDisabled = false;
+  name: string = "";
+  age: number = 24;
+  salary!: number;
+  isSingle: boolean = false;
+  isDisabled: boolean = false;
 
-  ll = ["a", "b", "c"]
+  users: any = []
 
-  onChange(e: Event) {
-    const inputValue = (e.target as HTMLInputElement).value;
-    this.name = inputValue;
-  }
+  // onChange(e: Event) {
+  //   const inputValue = (e.target as HTMLInputElement).value;
+  //   this.name = inputValue;
+  // }
 
-  onCLick() {
-    console.log(this.name);
+  @Output() newUser = new EventEmitter<any>()
+
+  onCLick(e: any) {
+    this.users.push(this.name)
+    this.newUser.emit({ isSingle: this.isSingle, salary: this.salary, name: this.name })
     this.name = "";
   }
+
+
 }

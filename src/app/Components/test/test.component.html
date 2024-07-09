@@ -1,0 +1,5 @@
+<p appBackgroundColor>{{name | titlecase | shortString}} status - {{isSingle? 'Bachelor' : "Married"}} salary- {{salary
+    | currency :"INR"}}
+</p>
+<button (click)="sendData($event)">Add Money</button>
+<button (click)="deleteUser($event)">Delete User</button>
