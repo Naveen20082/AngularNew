@@ -1,0 +1,17 @@
+<form action="" [formGroup]="loginform">
+    <h4>Please Login</h4>
+
+    <input type="email" placeholder="Enter Your Email" [formControl]="email">
+    <h5 [hidden]="email.valid ||email.untouched">Enter correxct Email</h5>
+    <input type="text" placeholder="Password" [formControl]="Password">
+    <h5 [hidden]="Password.valid ||Password.untouched">Enter correxct Email</h5>
+
+    <button mat-button (click)="login()" [disabled]="loginform.invalid">Login</button>
+    <button mat-button (click)="reset()">reset</button>
+
+
+    <!-- <input appInputStyle type='text' [(ngModel)]="name" placeholder="Enter Your name">
+    <input appInputStyle type='text' [(ngModel)]="email" placeholder="Confirm Password">
+    <input appInputStyle type='text' [(ngModel)]="Password" placeholder="Enter Your Password">
+    <input appInputStyle type='text' [(ngModel)]="CPassword" placeholder="Confirm Password"> -->
+</form>

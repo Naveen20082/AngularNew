@@ -1,4 +1,7 @@
-<p appBackgroundColor>{{name | titlecase | shortString}} status - {{isSingle? 'Bachelor' : "Married"}} salary- {{salary
+<!-- directive  --appBackgroundColor  -->
+<!--templeate variable  --myHeading  to get the element -->
+<p appBackgroundColor #myHeading>{{name | titlecase | shortString}} status - {{isSingle? 'Bachelor' : "Married"}}
+    salary- {{salary
     | currency :"INR"}}
 </p>
 <button (click)="sendData($event)">Add Money</button>
