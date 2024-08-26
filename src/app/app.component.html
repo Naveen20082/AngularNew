@@ -1,6 +1,4 @@
 <app-header></app-header>
-<h1>Hello</h1>
-<app-user-profile (newUser)="addUser($event)"></app-user-profile>
 
-<app-test *ngFor="let u of users" [userName]="u.name" [isSingle]="u.isSingle" [salary]="u.salary"
-    (myEvent)="recieveData($event)" (deleteUserEvent)="deleteUserEventFunc($event)"></app-test>
+
+<router-outlet></router-outlet>
