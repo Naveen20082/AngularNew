@@ -1,1 +1,3 @@
--------------> ng g c componets/abc 
+-------------> ng g c componets/abc components
+-------------> ng g s componets/abc services 
+-------------> ng g guard auth 

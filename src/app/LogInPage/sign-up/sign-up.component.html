@@ -10,12 +10,17 @@
         name="CPassword">
 
 
-    <h5 [hidden]="email.valid ||email.untouched">Enter correxct Email</h5>
-    <h5 [hidden]="Password.valid ||Password.untouched">Enter correxct Email</h5>
+    <h5 [hidden]="email.valid ||email.untouched">Enter correct Email</h5>
+    <h5 [hidden]="Password.valid ||Password.untouched">Enter correct Paasword</h5>
 
 
     <button mat-button (click)="register(resisterUser)" [disabled]="resisterUser.invalid">Register</button>
     <button mat-button (click)="reset(resisterUser)">reset</button>
+
+    <button mat-button (click)="this.authService.signInWithGoogle()">signUp with Google</button>
+
+    <!-- <li (click)="this.authService.signInWithGoogle()" [hidden]="this.authService.isAuthenticate()">sin in With Google
+    </li> -->
 
     <!-- <input appInputStyle type='text' [(ngModel)]="name" placeholder="Enter Your name">
     <input appInputStyle type='text' [(ngModel)]="email" placeholder="Confirm Password">
