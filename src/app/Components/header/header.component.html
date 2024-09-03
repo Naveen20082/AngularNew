@@ -1,10 +1,16 @@
 <!-- <p>header works!</p> -->
 
 <ul class="header">
-    <li>Home</li>
+    <li [routerLink]="['/home']" routerLinkActive="router-link-active">Home</li>
     <li>About</li>
     <li>Carrer</li>
     <li [routerLink]="['/learning']" routerLinkActive="router-link-active">Learning</li>
-    <li [routerLink]="['/login']" routerLinkActive="router-link-active">Login</li>
-    <li [routerLink]="['/signup']" routerLinkActive="router-link-active">SignUp</li>
+
+
+    <li [routerLink]="['/login']" routerLinkActive="router-link-active" [hidden]="this.authService.isAuthenticate()">
+        Login</li>
+    <li [routerLink]="['/signup']" routerLinkActive="router-link-active" [hidden]="this.authService.isAuthenticate()">
+        SignUp</li>
+
+    <li (click)="this.authService.logOut()" [hidden]="!this.authService.isAuthenticate()">LogOut</li>
 </ul>

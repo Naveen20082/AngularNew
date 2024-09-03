@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FirebaseService } from '../../Services/firebase.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, public authService: FirebaseService) {}
 
   Password: any = new FormControl('', [
     Validators.required,
@@ -31,11 +32,14 @@ export class LoginComponent {
   });
 
   login() {
-    console.log(this.loginform.value);
-    this.router.navigate(['/']);
-  }
+    // console.log(this.loginform.value);
+    // this.router.navigate(['/']);
 
-  reset() {
+    this.authService.loginUser(
+      this.loginform.value.email!,
+      this.loginform.value.Password!
+    );
+
     this.loginform.reset();
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { FirebaseService } from '../../Services/firebase.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  constructor() {
+  constructor(public authService: FirebaseService) {
     // runs after the class is ready
     console.log('Constructor');
   }
@@ -23,4 +24,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
     //cleanup
     //unregister event
   }
+
+  // Logout() {
+  //   const auth = this.authService.logOut();
+  // }
 }
