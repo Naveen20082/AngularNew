@@ -2,6 +2,8 @@
 
 <ul class="header">
     <li [routerLink]="['/home']" routerLinkActive="router-link-active">Home</li>
+    <li [routerLink]="['/createSnippet']" routerLinkActive="router-link-active"
+        [hidden]="!this.authService.isAuthenticate()">Create Snippet</li>
     <li>About</li>
     <li>Carrer</li>
     <li [routerLink]="['/learning']" routerLinkActive="router-link-active">Learning</li>

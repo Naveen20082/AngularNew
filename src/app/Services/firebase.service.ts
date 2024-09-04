@@ -43,7 +43,7 @@ export class FirebaseService {
         const user = userCredential.user;
         console.log(user);
 
-        this.Router.navigate(['/']);
+        this.Router.navigate(['/home']);
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -61,6 +61,7 @@ export class FirebaseService {
         // Signed in
         const user = userCredential.user;
         console.log(user);
+        this.Router.navigate(['/home']);
         // ...
       })
       .catch((error) => {
@@ -76,6 +77,7 @@ export class FirebaseService {
       .then(() => {
         // Sign-out successful.
         console.log('Sign-out successful.');
+        this.Router.navigate(['/home']);
       })
       .catch((error) => {
         // An error happened.
