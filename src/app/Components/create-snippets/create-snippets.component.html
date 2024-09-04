@@ -1,0 +1,12 @@
+<form action="" [formGroup]="creteSnippet">
+    <h4>Please Login</h4>
+
+    <input type="text" placeholder="Enter Title" [formControl]="title">
+    <!-- <h5 [hidden]="email.valid ||email.untouched">Enter valid Email</h5> -->
+    <input type="text" placeholder="Quote" [formControl]="quote">
+    <!-- <h5 [hidden]="Password.valid ||Password.untouched">Enter valid Password</h5> -->
+
+    <button mat-button (click)="addQuote()">Add Quote</button>
+
+
+</form>

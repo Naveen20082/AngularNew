@@ -1,0 +1,25 @@
+<table *ngIf="array.length > 0">
+    <caption>Data Table</caption>
+    <thead>
+        <tr>
+            <th>by</th>
+            <th>docID</th>
+            <th>quote</th>
+            <th>title</th>
+            <th>Actions</th> <!-- Added column for actions -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of array">
+            <td>{{item.by}}</td>
+            <td>{{ item.docID }}</td>
+            <td>{{ item.quote }}</td>
+            <td>{{ item.title }}</td>
+            <td>
+                <button mat-button (click)="getData(item.docID)">Get Data</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p *ngIf="array.length === 0">No Data Available</p>

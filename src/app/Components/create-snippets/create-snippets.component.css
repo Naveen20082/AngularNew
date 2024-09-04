@@ -1,0 +1,14 @@
+/* General styling for all input fields */
+.input-field {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+/* Specific styling for the quote input */
+.quote-input {
+  background-color: black;
+  color: white;
+}
